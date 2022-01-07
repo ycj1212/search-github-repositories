@@ -15,6 +15,7 @@ class GithubRepoSearchFragment : Fragment() {
     private lateinit var binding: FragmentGithubRepoSearchBinding
     private lateinit var searchView: SearchView
 
+    private val adapter = GithubRepoAdapter()
     private val viewModel: GithubRepoSearchViewModel by viewModels()
 
     override fun onCreateView(
@@ -28,6 +29,8 @@ class GithubRepoSearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.rvGithubRepositories.adapter = adapter
 
         searchView =
             binding.tbSearchGithubRepositories.menu.findItem(R.id.search).actionView as SearchView
@@ -43,7 +46,7 @@ class GithubRepoSearchFragment : Fragment() {
         })
 
         viewModel.githubRepoList.observe(viewLifecycleOwner) { githubRepoList ->
-            githubRepoList.forEach { println(it) }
+            adapter.submitList(githubRepoList)
         }
     }
 }
