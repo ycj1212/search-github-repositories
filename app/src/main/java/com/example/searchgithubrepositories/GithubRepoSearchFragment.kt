@@ -33,15 +33,17 @@ class GithubRepoSearchFragment : Fragment() {
             binding.tbSearchGithubRepositories.menu.findItem(R.id.search).actionView as SearchView
         searchView.isSubmitButtonEnabled = true
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextChange(newText: String?): Boolean {
-                TODO("입력 중일 때 처리")
-                return true
-            }
+            override fun onQueryTextChange(newText: String?): Boolean = false
 
             override fun onQueryTextSubmit(query: String?): Boolean {
-                TODO("입력을 완료할 때 처리")
+                query ?: return false
+                viewModel.searchGithubRepo(query)
                 return true
             }
         })
+
+        viewModel.githubRepoList.observe(viewLifecycleOwner) { githubRepoList ->
+            githubRepoList.forEach { println(it) }
+        }
     }
 }
