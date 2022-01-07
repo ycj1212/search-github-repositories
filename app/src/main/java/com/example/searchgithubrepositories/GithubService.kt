@@ -15,7 +15,7 @@ interface GithubService {
         @Query("order") order: String? = null,
         @Query("per_page") perPage: Int? = null,
         @Query("page") page: Int? = null
-    )
+    ): SearchRepositoriesResponse
 
     companion object {
         private const val BASE_URL = "https://api.github.com/"
