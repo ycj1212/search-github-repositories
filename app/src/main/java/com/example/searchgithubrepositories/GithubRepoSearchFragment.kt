@@ -8,7 +8,9 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.searchgithubrepositories.databinding.FragmentGithubRepoSearchBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GithubRepoSearchFragment : Fragment() {
     private lateinit var binding: FragmentGithubRepoSearchBinding
     private lateinit var searchView: SearchView
