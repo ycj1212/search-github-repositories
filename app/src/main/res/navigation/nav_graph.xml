@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/searchFragment">
+    app:startDestination="@id/githubRepoSearchFragment">
 
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.searchgithubrepositories.SearchFragment"
-        android:label="SearchFragment"
-        tools:layout="@layout/fragment_search" />
+        android:id="@+id/githubRepoSearchFragment"
+        android:name="com.example.searchgithubrepositories.GithubRepoSearchFragment"
+        android:label="GithubRepoSearchFragment"
+        tools:layout="@layout/fragment_github_repo_search" />
 </navigation>

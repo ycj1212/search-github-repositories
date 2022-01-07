@@ -2,7 +2,7 @@ package com.example.searchgithubrepositories
 
 import com.google.gson.annotations.SerializedName
 
-data class SearchRepositoriesResponse(
+data class GithubRepoSearchResponse(
     @SerializedName("incomplete_results")
     val incompleteResults: Boolean,
     @SerializedName("items")
