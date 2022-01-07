@@ -97,7 +97,7 @@ data class Item(
     @SerializedName("labels_url")
     val labelsUrl: String,
     @SerializedName("language")
-    val language: String,
+    val language: String? = null,
     @SerializedName("languages_url")
     val languagesUrl: String,
     @SerializedName("license")

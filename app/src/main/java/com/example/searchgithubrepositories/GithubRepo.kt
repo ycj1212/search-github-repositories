@@ -10,7 +10,7 @@ data class GithubRepo(
             GithubRepo(
                 name = fullName,
                 imageUrl = owner.avatarUrl,
-                language = language
+                language = language ?: ""
             )
         }
     }
