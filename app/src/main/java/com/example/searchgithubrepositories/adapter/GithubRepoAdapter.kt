@@ -1,4 +1,4 @@
-package com.example.searchgithubrepositories
+package com.example.searchgithubrepositories.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.searchgithubrepositories.GithubRepoAdapter.GithubRepoViewHolder
+import com.example.searchgithubrepositories.data.GithubRepo
+import com.example.searchgithubrepositories.adapter.GithubRepoAdapter.GithubRepoViewHolder
 import com.example.searchgithubrepositories.databinding.ItemGithubRepoBinding
 
 class GithubRepoAdapter : ListAdapter<GithubRepo, GithubRepoViewHolder>(GithubRepoDiffCallback()) {

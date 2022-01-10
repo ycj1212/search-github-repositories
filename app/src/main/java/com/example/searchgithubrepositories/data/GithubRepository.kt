@@ -1,5 +1,6 @@
-package com.example.searchgithubrepositories
+package com.example.searchgithubrepositories.data
 
+import com.example.searchgithubrepositories.api.GithubService
 import javax.inject.Inject
 
 class GithubRepository @Inject constructor(private val service: GithubService) {

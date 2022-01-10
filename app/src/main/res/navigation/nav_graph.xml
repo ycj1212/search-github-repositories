@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/githubRepoSearchFragment"
-        android:name="com.example.searchgithubrepositories.GithubRepoSearchFragment"
+        android:name="com.example.searchgithubrepositories.ui.GithubRepoSearchFragment"
         android:label="GithubRepoSearchFragment"
         tools:layout="@layout/fragment_github_repo_search" />
 </navigation>

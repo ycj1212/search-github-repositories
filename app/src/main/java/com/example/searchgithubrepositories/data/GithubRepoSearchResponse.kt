@@ -1,4 +1,4 @@
-package com.example.searchgithubrepositories
+package com.example.searchgithubrepositories.data
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.example.searchgithubrepositories
+package com.example.searchgithubrepositories.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.example.searchgithubrepositories.R
+import com.example.searchgithubrepositories.adapter.GithubRepoAdapter
 import com.example.searchgithubrepositories.databinding.FragmentGithubRepoSearchBinding
+import com.example.searchgithubrepositories.viewmodel.GithubRepoSearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

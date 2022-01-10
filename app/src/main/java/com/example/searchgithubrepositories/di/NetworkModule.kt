@@ -1,5 +1,6 @@
-package com.example.searchgithubrepositories
+package com.example.searchgithubrepositories.di
 
+import com.example.searchgithubrepositories.api.GithubService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.example.searchgithubrepositories
+package com.example.searchgithubrepositories.data
 
 data class GithubRepo(
     val name: String,
