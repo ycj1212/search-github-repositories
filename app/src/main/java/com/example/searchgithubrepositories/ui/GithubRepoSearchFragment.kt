@@ -7,13 +7,17 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.example.searchgithubrepositories.R
 import com.example.searchgithubrepositories.adapter.GithubRepoAdapter
+import com.example.searchgithubrepositories.adapter.GithubRepoLoadStateAdapter
 import com.example.searchgithubrepositories.databinding.FragmentGithubRepoSearchBinding
 import com.example.searchgithubrepositories.viewmodel.GithubRepoSearchViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class GithubRepoSearchFragment : Fragment() {
@@ -35,7 +39,6 @@ class GithubRepoSearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.rvGithubRepositories.adapter = adapter
         binding.rvGithubRepositories.addItemDecoration(
             DividerItemDecoration(
                 requireContext(),
@@ -52,15 +55,19 @@ class GithubRepoSearchFragment : Fragment() {
 
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query ?: return false
-                viewModel.searchGithubRepo(query)
+                search(query)
                 searchView.onActionViewCollapsed()
                 binding.tbSearchGithubRepositories.subtitle = "$query"
                 return true
             }
         })
+    }
 
-        viewModel.githubRepoList.observe(viewLifecycleOwner) { githubRepoList ->
-            adapter.submitList(githubRepoList)
+    private fun search(query: String) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.searchGithubRepo(query).collectLatest { pagingData ->
+                adapter.submitData(pagingData)
+            }
         }
     }
 }
