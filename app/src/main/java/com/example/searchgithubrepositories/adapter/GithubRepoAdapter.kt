@@ -2,15 +2,15 @@ package com.example.searchgithubrepositories.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.searchgithubrepositories.data.GithubRepo
 import com.example.searchgithubrepositories.adapter.GithubRepoAdapter.GithubRepoViewHolder
+import com.example.searchgithubrepositories.data.GithubRepo
 import com.example.searchgithubrepositories.databinding.ItemGithubRepoBinding
 
-class GithubRepoAdapter : ListAdapter<GithubRepo, GithubRepoViewHolder>(GithubRepoDiffCallback()) {
+class GithubRepoAdapter : PagingDataAdapter<GithubRepo, GithubRepoViewHolder>(GithubRepoDiffCallback()) {
     class GithubRepoViewHolder(
         private val binding: ItemGithubRepoBinding
     ) : RecyclerView.ViewHolder(binding.root) {
