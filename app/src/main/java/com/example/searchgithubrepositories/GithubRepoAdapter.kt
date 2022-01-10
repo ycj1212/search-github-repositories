@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.searchgithubrepositories.GithubRepoAdapter.GithubRepoViewHolder
 import com.example.searchgithubrepositories.databinding.ItemGithubRepoBinding
 
@@ -15,6 +16,10 @@ class GithubRepoAdapter : ListAdapter<GithubRepo, GithubRepoViewHolder>(GithubRe
         fun bind(item: GithubRepo) = with(binding) {
             tvGithubRepoName.text = item.name
             tvGithubRepoLanguage.text = item.language
+
+            Glide.with(itemView)
+                .load(item.imageUrl)
+                .into(ivUserAvatarImage)
         }
     }
 

@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/ic_launcher_background" />
+        tools:src="@drawable/ic_github_logo" />
 
     <TextView
         android:id="@+id/tv_github_repo_name"
