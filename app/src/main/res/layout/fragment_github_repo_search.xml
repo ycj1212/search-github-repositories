@@ -15,7 +15,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:logo="@drawable/ic_github_logo"
-        app:menu="@menu/search_bar" />
+        app:menu="@menu/search_bar"
+        app:title="@string/tb_search_github_repositories_title"
+        app:titleMarginStart="24dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_github_repositories"

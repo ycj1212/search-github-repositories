@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">SearchGithubRepositories</string>
 
+    <!-- fragment_github_repo_search.xml -->
+    <string name="tb_search_github_repositories_title">Search Repositories</string>
+
     <!-- item_github_repo.xml -->
     <string name="iv_user_avatar_image_content_description">github user avatar image</string>
 
