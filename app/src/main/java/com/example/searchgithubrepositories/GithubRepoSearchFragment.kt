@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 import com.example.searchgithubrepositories.databinding.FragmentGithubRepoSearchBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,6 +33,12 @@ class GithubRepoSearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.rvGithubRepositories.adapter = adapter
+        binding.rvGithubRepositories.addItemDecoration(
+            DividerItemDecoration(
+                requireContext(),
+                RecyclerView.VERTICAL
+            )
+        )
 
         searchView =
             binding.tbSearchGithubRepositories.menu.findItem(R.id.search).actionView as SearchView
