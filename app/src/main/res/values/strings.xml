@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">SearchGithubRepositories</string>
 
+    <!-- GithubRepoSearchFragment.kt -->
+    <string name="search_view_query_hint">검색할 키워드를 입력하세요.</string>
+
     <!-- fragment_github_repo_search.xml -->
     <string name="tb_search_github_repositories_title">Search Repositories</string>
 

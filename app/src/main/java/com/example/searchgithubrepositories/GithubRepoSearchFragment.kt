@@ -35,6 +35,7 @@ class GithubRepoSearchFragment : Fragment() {
         searchView =
             binding.tbSearchGithubRepositories.menu.findItem(R.id.search).actionView as SearchView
         searchView.isSubmitButtonEnabled = true
+        searchView.queryHint = resources.getString(R.string.search_view_query_hint)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextChange(newText: String?): Boolean = false
 
