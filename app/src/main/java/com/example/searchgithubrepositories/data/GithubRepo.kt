@@ -6,7 +6,7 @@ data class GithubRepo(
     val language: String
 ) {
     companion object {
-        fun from(item: Item) = with(item) {
+        fun from(item: GithubRepoItem) = with(item) {
             GithubRepo(
                 name = fullName,
                 imageUrl = owner.avatarUrl,
