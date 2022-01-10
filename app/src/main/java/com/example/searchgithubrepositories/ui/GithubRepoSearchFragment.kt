@@ -39,6 +39,9 @@ class GithubRepoSearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.rvGithubRepositories.adapter = adapter.withLoadStateFooter(
+            GithubRepoLoadStateAdapter { adapter.retry() }
+        )
         binding.rvGithubRepositories.addItemDecoration(
             DividerItemDecoration(
                 requireContext(),

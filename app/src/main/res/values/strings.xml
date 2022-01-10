@@ -12,4 +12,8 @@
 
     <!-- search_bar.xml -->
     <string name="search_title">Search</string>
+
+    <!-- item_network_state.xml -->
+    <string name="tv_error_msg_text">네트워크 상태를 확인하세요.</string>
+    <string name="btn_retry_text">재시도</string>
 </resources>
