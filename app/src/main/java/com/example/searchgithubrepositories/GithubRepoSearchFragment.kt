@@ -41,6 +41,7 @@ class GithubRepoSearchFragment : Fragment() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query ?: return false
                 viewModel.searchGithubRepo(query)
+                searchView.onActionViewCollapsed()
                 return true
             }
         })
