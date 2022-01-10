@@ -43,6 +43,7 @@ class GithubRepoSearchFragment : Fragment() {
                 query ?: return false
                 viewModel.searchGithubRepo(query)
                 searchView.onActionViewCollapsed()
+                binding.tbSearchGithubRepositories.subtitle = "$query"
                 return true
             }
         })
